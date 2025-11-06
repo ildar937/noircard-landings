@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NoirCard — Лендинг v2 (светлый)</title>
+<meta name="description" content="AI-оформление: карточки, обложки, тексты. Быстрый бриф, заявки в Telegram/WhatsApp.">
+<style>:root{--bg:#F6F7FB;--fg:#101426;--muted:#5D6B82;--acc:#0B0F2A;--br:18px}
+*{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--fg);font:500 16px/1.5 system-ui,Segoe UI,Arial}
+.wrap{max-width:1080px;margin:0 auto;padding:22px}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0}
+.logo{font-weight:900}.btn{border-radius:999px;padding:12px 18px;font-weight:800;border:2px solid var(--acc);color:var(--acc);background:#fff}.btn.primary{background:var(--acc);color:#fff;border-color:var(--acc);margin-right:8px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}.card{background:#fff;border:1px solid #E5E8F0;border-radius:var(--br);padding:18px;box-shadow:0 8px 24px rgba(16,20,38,.06)}
+.img{width:100%;height:auto;border-radius:12px;display:block}
+.grid{display:grid;gap:18px}.features{grid-template-columns:repeat(3,1fr);margin:20px 0}.feat h3{margin:0 0 6px;font-size:18px}.feat p{margin:0;color:#5D6B82}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{border-radius:var(--br);overflow:hidden;border:1px dashed #D6DBE6}
+.prices{grid-template-columns:repeat(3,1fr)}.num{font-size:28px;font-weight:900;margin:8px 0 12px}
+@media (max-width:920px){.hero{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}.prices{grid-template-columns:1fr}.before-after{grid-template-columns:1fr}}</style></head>
+<body><div class="wrap">
+<nav class="nav"><div class="logo">NoirCard Studio</div><div><a id="tg1" class="btn primary" href="#" target="_blank" rel="noopener">В Telegram</a><a id="wa1" class="btn" href="#" target="_blank" rel="noopener">WhatsApp</a></div></nav>
+<section class="hero">
+  <div class="card"><span style="display:inline-block;background:#111;color:#fff;border-radius:999px;padding:6px 10px;font-size:12px">AI-оформление</span>
+  <h1 style="margin:8px 0 12px;font-size:clamp(28px,4.2vw,46px)">Карточки, обложки, тексты — быстро и понятно</h1>
+  <p style="margin:0 0 16px;color:#5D6B82">Пакеты Lite / Pro / Max. «До/После», прайсы, Reels-сцены. Метки ?src/utm сохраняем.</p>
+  <div style="margin:10px 0 4px"><a id="tg2" class="btn primary" href="#" target="_blank" rel="noopener">Заказать в Telegram</a><a id="form1" class="btn" href="#" target="_blank" rel="noopener">Оставить заявку</a></div></div>
+  <div class="card"><img class="img" src="../assets/hero.svg" alt="Герой"/></div>
+</section>
+<section class="grid features">
+  <div class="card feat"><h3>12–24 часа</h3><p>Черновик в день обращения</p></div>
+  <div class="card feat"><h3>Под нишу</h3><p>Маркетплейсы, сайты, соцсети</p></div>
+  <div class="card feat"><h3>Готово к публикации</h3><p>PNG/JPG и тексты</p></div>
+</section>
+<section class="grid"><div class="card"><h3 style="margin:0 0 10px">«До / После»</h3>
+  <div class="before-after">
+    <div class="panel"><img class="img" src="../assets/before.svg" alt="До"/></div>
+    <div class="panel"><img class="img" src="../assets/after.svg" alt="После"/></div>
+  </div>
+</div></section>
+<section class="grid prices" style="margin:18px 0">
+  <div class="card"><h4>Lite</h4><div class="num">4 990 ₽</div><ul style="margin:0 0 8px 18px;color:#5D6B82"><li>1 «До/После»</li><li>1 раунд правок</li><li>До 24 ч</li></ul><a id="tg3" class="btn primary" href="#" target="_blank" rel="noopener">Lite</a></div>
+  <div class="card"><h4>Pro</h4><div class="num">14 900 ₽</div><ul style="margin:0 0 8px 18px;color:#5D6B82"><li>3 «До/После»</li><li>Тексты и заголовки</li><li>До 48 ч</li></ul><a id="tg4" class="btn primary" href="#" target="_blank" rel="noopener">Pro</a></div>
+  <div class="card"><h4>Max</h4><div class="num">29 900 ₽</div><ul style="margin:0 0 8px 18px;color:#5D6B82"><li>5 «До/После»</li><li>Видео 9:16 + 1:1</li><li>Чек-лист брифа</li></ul><a id="tg5" class="btn primary" href="#" target="_blank" rel="noopener">Max</a></div>
+</section>
+<footer class="wrap" style="padding:0"><p style="color:#5D6B82">© NoirCard Studio • Ответ сегодня</p></footer>
+</div>
+<script>
+const TG_BOT = "https://t.me/DoAfterBot";
+const WA_NUM = "89031696661"; const WA = "https://wa.me/" + WA_NUM;
+const FORM = "https://docs.google.com/forms/d/e/1FAIpQLSdR3IK6FcsfUMcjAgzAxcq3jNAsIjtIWzLm8fd8fwVXm-Ay5Q/viewform";
+const qs = new URLSearchParams(location.search), keep = new URLSearchParams();
+["src","utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(k=>{ if(qs.get(k)) keep.set(k, qs.get(k)); });
+const tail = keep.toString() ? ("?" + keep.toString()) : "";
+const setHref = (id, url) => { const a = document.getElementById(id); if(a) a.href = url + tail; }
+["tg1","tg2","tg3","tg4","tg5"].forEach(id=>setHref(id, TG_BOT)); setHref("wa1", WA); setHref("form1", FORM);
+</script>
+</body></html>
